@@ -1,0 +1,12 @@
+streamlit
+openai
+langchain
+transformers
+accelerate
+sentence-transformers
+qdrant-client
+langchainhub
+langchain-community
+chardet
+langchain_huggingface
+langchain_qdrant
