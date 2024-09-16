@@ -1,0 +1,5 @@
+{
+    "SECRET_KEY": "your-secret-key-here",
+    "DEBUG": true,
+    "ALLOWED_HOSTS": ["localhost", "127.0.0.1"]
+}

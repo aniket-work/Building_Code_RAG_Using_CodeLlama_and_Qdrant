@@ -39,7 +39,7 @@ if root_dir:
     vector_store = initialize_vector_store(texts, embeddings, QDRANT_PATH, QDRANT_COLLECTION_NAME)
     st.sidebar.success("Vector store initialized")
 
-    retriever = vector_store.as_retriever(search_kwargs={"k": 3})
+    retriever = vector_store.as_retriever(search_kwargs={"k": 1})
 
     llm = get_llm(REPO_ID)
     qa_chain = setup_qa_chain(llm, retriever)

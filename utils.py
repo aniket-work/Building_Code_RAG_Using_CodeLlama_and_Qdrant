@@ -9,7 +9,7 @@ def load_documents(root_dir: str):
     """Loads documents from a specified directory."""
     loader = DirectoryLoader(
         root_dir,
-        glob="**/*.txt",
+        glob="**/*.*",
         loader_cls=TextLoader,
         loader_kwargs={"autodetect_encoding": True},
     )
