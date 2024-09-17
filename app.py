@@ -1,4 +1,5 @@
 import streamlit as st
+from codellama_agent import run_codellama_agent
 from constants import QDRANT_PATH, QDRANT_COLLECTION_NAME, REPO_ID
 from utils import load_documents, split_text, initialize_vector_store, get_embeddings
 from llm_utils import get_llm, setup_qa_chain
@@ -64,13 +65,19 @@ if root_dir:
     if query:
         with st.spinner("Processing query..."):
             result = qa_chain.run(query)
-            explanation = explanation_chain.run(result=result)
+            agent_result = run_codellama_agent(result)  # Run our new agent on the result
 
         st.subheader("Answer:")
         st.write(result)
 
-        st.subheader("Explanation:")
-        st.write(explanation)
+        st.subheader("AI Agent Analysis:")
+        st.write(agent_result['analysis'])
+
+        st.subheader("AI Agent Explanation:")
+        st.write(agent_result['explanation'])
+
+        st.subheader("AI Agent Suggested Improvements:")
+        st.write(agent_result['improvements'])
 
     # Display and analyze relevant documents
     if st.checkbox("Show and analyze relevant documents"):
@@ -80,10 +87,12 @@ if root_dir:
             st.markdown(f"**Document {i + 1}:**")
             st.text(doc.page_content)
 
-            # Analyze document content
-            doc_analysis = explanation_chain.run(result=doc.page_content)
-            st.subheader(f"  Analysis of Document {i + 1}:")
-            st.write(doc_analysis)
+            # Analyze document content using our new agent
+            doc_analysis = run_codellama_agent(doc.page_content)
+            st.subheader(f"AI Agent Analysis of Document {i + 1}:")
+            st.write(doc_analysis['analysis'])
+            st.write(doc_analysis['explanation'])
+            st.write(doc_analysis['improvements'])
 
             st.markdown("---")
 
