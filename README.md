@@ -73,6 +73,6 @@ Follow these steps to set up and run the 'Real Estate Advisory Company Using AI 
       docker run -p 6333:6333 -p 6334:6334 -v C:\qdrant_data:/qdrant/storage:z qdrant/qdrant
    
       # Run Semantic Search Over Structured &amp; Unstructured Data
-      streamlit run main.py
+      streamlit run app.py
       
    ```

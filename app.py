@@ -9,8 +9,8 @@ from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 
 # Streamlit UI setup
-st.set_page_config(page_title="Enhanced CodeLlama RAG System", layout="wide")
-st.title("Enhanced CodeLlama RAG System")
+st.set_page_config(page_title="Code RAG Using CodeLlama And Qdrant", layout="wide")
+st.title("Code RAG Using CodeLlama And Qdrant")
 st.sidebar.header("Settings")
 
 # Load configuration from config.json

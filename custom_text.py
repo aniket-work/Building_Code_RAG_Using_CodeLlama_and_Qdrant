@@ -1,16 +1,3 @@
-import logging
-from pathlib import Path
-from typing import Iterator, Optional, Union
-
-from langchain_core.documents import Document
-
-from langchain_community.document_loaders.base import BaseLoader
-from langchain_community.document_loaders.helpers import detect_file_encodings
-
-logger = logging.getLogger(__name__)
-
-
-import logging
 from pathlib import Path
 from typing import Iterator, Optional, Union
 
@@ -18,7 +5,9 @@ from langchain_core.documents import Document
 from langchain_community.document_loaders.base import BaseLoader
 from langchain_community.document_loaders.helpers import detect_file_encodings
 
+import logging
 logger = logging.getLogger(__name__)
+
 
 class TextLoader(BaseLoader):
     """Load text file."""

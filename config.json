@@ -1,5 +1,5 @@
 {
-  "huggingfacehub_api_token": "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",
+  "huggingfacehub_api_token": "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",
   "repo_id": "codellama/CodeLlama-7b-hf",
   "qdrant_path": "./local_qdrant",
   "qdrant_collection_name": "my_documents"
