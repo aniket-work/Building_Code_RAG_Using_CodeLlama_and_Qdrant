@@ -69,10 +69,10 @@ Follow these steps to set up and run the 'Real Estate Advisory Company Using AI 
 ## Run - Semantic Search Over Structured &amp; Unstructured Data
 
    ```bash 
-      # run docker image
+      # run qdrant docker image
       docker run -p 6333:6333 -p 6334:6334 -v C:\qdrant_data:/qdrant/storage:z qdrant/qdrant
    
-      # Run Semantic Search Over Structured &amp; Unstructured Data
+      # Run Code RAG Using CodeLlama and Qdrant
       streamlit run app.py
       
    ```

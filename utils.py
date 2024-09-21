@@ -5,6 +5,7 @@ from langchain_community.document_loaders import DirectoryLoader, TextLoader
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Qdrant
 
+
 def load_documents(root_dir: str):
     """Loads documents from a specified directory."""
     loader = DirectoryLoader(
@@ -14,6 +15,7 @@ def load_documents(root_dir: str):
         loader_kwargs={"autodetect_encoding": True},
     )
     return loader.load()
+
 
 def split_text(documents):
     """Splits documents into smaller chunks."""

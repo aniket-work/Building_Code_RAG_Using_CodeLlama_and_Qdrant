@@ -79,17 +79,3 @@ def run_codellama_agent(code: str) -> Dict[str, Any]:
         "explanation": result['messages'][2].content,
         "improvements": result['messages'][3].content
     }
-
-# Example usage
-if __name__ == "__main__":
-    sample_code = """
-    def factorial(n):
-        if n == 0:
-            return 1
-        else:
-            return n * factorial(n-1)
-    """
-    result = run_codellama_agent(sample_code)
-    print("Analysis:", result['analysis'])
-    print("\nExplanation:", result['explanation'])
-    print("\nSuggested Improvements:", result['improvements'])
